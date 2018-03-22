@@ -346,4 +346,4 @@ class GameItem extends React.Component {
   }
 }
 
-render(<MainPage cars={cars} />, document.querySelector('body'))
+render(<MainPage games={games} />, document.querySelector('body'))
