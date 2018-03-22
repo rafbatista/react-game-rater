@@ -316,8 +316,34 @@ class MainPage extends React.Component {
           Game Rater <small>Game choices tailored to your taste</small>
         </h1>
         <h3>All Games</h3>
-        <div className="row games-list" />
+        <GamesList games={this.props.games} />
       </div>
     )
   }
 }
+
+class GamesList extends React.Component {
+  render() {
+    const games = this.props.games
+    const gameItems = games.map(game => (
+      <GameItem
+        key={game.id}
+        id={game.id}
+        name={game.name}
+        genre={game.genre}
+        rating={game.rating}
+        esrb={game.esrb}
+        imgSrc={game.imgSrc}
+      />
+    ))
+    return <div className="row games-list">{gameItems}</div>
+  }
+}
+
+class GameItem extends React.Component {
+  render() {
+    return ()
+  }
+}
+
+render(<MainPage cars={cars} />, document.querySelector('body'))
