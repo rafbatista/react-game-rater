@@ -307,3 +307,18 @@ const games = [
       'operation to date.'
   }
 ]
+
+class MainPage extends React.Component {
+  render() {
+    return (
+      <div className="container">
+        <h1>
+          Game Rater <small>Game choices tailored to your taste</small>
+        </h1>
+        <h3>All Games</h3>
+        <div className="row games-list" />
+        <GamesList games={this.props.games} />
+      </div>
+    )
+  }
+}
