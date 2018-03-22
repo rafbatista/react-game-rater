@@ -317,7 +317,6 @@ class MainPage extends React.Component {
         </h1>
         <h3>All Games</h3>
         <div className="row games-list" />
-        <GamesList games={this.props.games} />
       </div>
     )
   }
