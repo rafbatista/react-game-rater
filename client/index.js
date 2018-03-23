@@ -342,7 +342,50 @@ class GamesList extends React.Component {
 
 class GameItem extends React.Component {
   render() {
-    return ()
+    return (
+      <div
+        className="col-md-3 thumbnail"
+        id={this.props.id}
+        data-user-rating-value={this.props.rating}
+      >
+        <img
+          className="game-icon"
+          src={this.props.imgSrc}
+          alt={this.props.name}
+        />
+        <div className="game-caption">
+          <div className="star-container">
+            <input
+              id={'input-' + this.props.id}
+              name={'input-' + this.props.id}
+              className="rating rating-loading"
+              data-min="0"
+              data-max="5"
+              data-step="1"
+              data-size="sm"
+            />
+          </div>
+          <h5>{this.props.name}</h5>
+          <div>
+            <ul>
+              <li className="genre">Genre: {this.props.genre}</li>
+              <li className="rating-detail">
+                User Rating: {this.props.rating}
+              </li>
+              <li className="esrb detail">ESRB: {this.props.esrb}</li>
+            </ul>
+          </div>
+          <div>
+            <button className="btn btn-primary" role="button">
+              Rate
+            </button>
+            <button className="btn btn-default" role="button">
+              More Details
+            </button>
+          </div>
+        </div>
+      </div>
+    )
   }
 }
 
